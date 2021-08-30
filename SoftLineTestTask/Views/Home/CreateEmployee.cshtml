@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+@using SoftLineTestTask.Models
+@model Employee
+
+<html>
+<head>
+    <title>Добавление работника</title>
+</head>
+<body>
+    <div>
+        <h3>Добавить работника</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="employeeBlock">
+                <div>
+                    <label>ФИО:</label>
+                    <input type="text" name="name" />
+                </div>
+                <div>
+                    <label>Должность:</label>
+                    <input type="text" name="Position" />
+                </div>
+                <div>
+                    <label>Дата рождения:</label>
+                    <input type="date" name="Birthday" />
+                </div>
+                <div>
+                    <label>Доп. информация:</label>
+                    <input type="text" name="Text" />
+                </div>
+                <div>
+                    <label>Декрет:</label>
+                    <input type="checkbox" name="Decree" value="true" />
+                </div>
+            </div>
+            <div id="subTableBlock">
+                <h5>Дополнительное поле 1</h5>
+                <div>
+                    <label>Название</label>
+                    <div>
+                        <input type="text" name="SubTable[0].FieldName" />
+                    </div>
+                    <label>Значение</label>
+                    <div>
+                        <input type="text" name="SubTable[0].FieldText" />
+                    </div>
+                </div>
+                <h5>Дополнительное поле 2</h5>
+                <div>
+                    <label>Название</label>
+                    <div>
+                        <input type="text" name="SubTable[1].FieldName" />
+                    </div>
+                    <label>Значение</label>
+                    <div>
+                        <input type="text" name="SubTable[1].FieldText" />
+                    </div>
+                </div>
+                <h5>Дополнительное поле 3</h5>
+                <div>
+                    <label>Название</label>
+                    <div>
+                        <input type="text" name="SubTable[2].FieldName" />
+                    </div>
+                    <label>Значение</label>
+                    <div>
+                        <input type="text" name="SubTable[2].FieldText" />
+                    </div>
+                </div>
+                <h5>Дополнительное поле 4</h5>
+                <div>
+                    <label>Название</label>
+                    <div>
+                        <input type="text" name="SubTable[3].FieldName" />
+                    </div>
+                    <label>Значение</label>
+                    <div>
+                        <input type="text" name="SubTable[3].FieldText" />
+                    </div>
+                </div>
+            </div>
+            <p><a class="addLink">Добавить сотрудника</a></p>
+            <p><input type="submit" value="Добавить" /></p>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<head>
+    <title>Список сотрудников</title>
+</head>
+<body>
+    <table style="width: 100%;">
+        @foreach (var Employee in Model)
+        {
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Position</td>
+                <td>Birthday</td>
+                <td>Text</td>
+                <td>Decree</td>
+                @foreach (var SubTable in Employee.SubTable)
+                {
+                    <td>@SubTable.FieldName</td>
+                }
+            </tr>
+            <tr>
+                <td>@Employee.Id</td>
+                <td>@Employee.Name</td>
+                <td>@Employee.Position</td>
+                <td>@Employee.Birthday.ToShortDateString()</td>
+                <td>@Employee.Text</td>
+                <td>@Employee.Decree</td>
+                @foreach (var SubTable in Employee.SubTable)
+                {
+                    <td>@SubTable.FieldText</td>
+                }
+            </tr>
+        }
+    </table>
+</body>
+</html>
